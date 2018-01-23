@@ -1,2 +1,0 @@
-# blog
-Hugo blog + Netify
