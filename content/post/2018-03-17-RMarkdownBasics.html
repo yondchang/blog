@@ -1,0 +1,86 @@
+---
+title: RMarkdown basics
+author: ~
+date: '2018-03-17'
+slug: RMarkdown basics
+categories: []
+tags: []
+---
+
+
+
+<p><a href="https://rmarkdown.rstudio.com/authoring_basics.html">Full reference is here</a></p>
+<pre class="background"><code># Header 1
+## **Header** 2
+### __Header__ 3</code></pre>
+<div id="header-1" class="section level1">
+<h1>Header 1</h1>
+<div id="header-2" class="section level2">
+<h2><strong>Header</strong> 2</h2>
+<div id="header-3" class="section level3">
+<h3><strong>Header</strong> 3</h3>
+<pre><code>* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b</code></pre>
+<ul>
+<li>Item 1</li>
+<li>Item 2
+<ul>
+<li>Item 2a</li>
+<li>Item 2b</li>
+</ul></li>
+</ul>
+<pre><code>` ` `{r eval=TRUE, echo=TRUE}
+summary(cars$dist)
+summary(cars$speed)
+` ` `</code></pre>
+<pre class="r"><code>summary(cars$dist)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    2.00   26.00   36.00   42.98   56.00  120.00</code></pre>
+<pre class="r"><code>summary(cars$speed)</code></pre>
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     4.0    12.0    15.0    15.4    19.0    25.0</code></pre>
+<pre><code>There were `r nrow(cars)` cars studied</code></pre>
+<p>There were 50 cars studied</p>
+<pre><code>[linked phrase](http://example.com)</code></pre>
+<p><a href="http://example.com">linked phrase</a></p>
+<pre><code>&gt; It&#39;s always better to give
+&gt; than to receive.</code></pre>
+<blockquote>
+<p>It’s always better to give than to receive.</p>
+</blockquote>
+<pre><code>$A_2$</code></pre>
+<p><span class="math inline">\(A_2\)</span></p>
+<pre><code>$$A_2$$</code></pre>
+<p><span class="math display">\[A_2\]</span></p>
+<pre><code>******</code></pre>
+<hr />
+<pre><code>First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+Reference Style Links and Images</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th>First Header</th>
+<th>Second Header</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+<tr class="even">
+<td>Content Cell</td>
+<td>Content Cell</td>
+</tr>
+</tbody>
+</table>
+<p><code>superscript^2</code> superscript<sup>2</sup></p>
+<p><code>~~strikethrough~~</code> <del>strikethrough</del></p>
+</div>
+</div>
+</div>

@@ -1,0 +1,97 @@
+---
+title: RMarkdown basics
+author: ~
+date: '2018-03-17'
+slug: RMarkdown basics
+categories: []
+tags: []
+---
+
+[Full reference is here](https://rmarkdown.rstudio.com/authoring_basics.html)
+
+```{background="green"}
+# Header 1
+## **Header** 2
+### __Header__ 3
+```
+
+# Header 1
+## **Header** 2
+### __Header__ 3
+
+```
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+```
+* Item 1
+* Item 2
+    + Item 2a
+    + Item 2b
+    
+```
+`r '\x60 \x60 \x60{r eval=TRUE, echo=TRUE}
+summary(cars$dist)
+summary(cars$speed)
+\x60 \x60 \x60'
+`
+```
+
+```{r eval=TRUE, echo=TRUE}
+summary(cars$dist)
+summary(cars$speed)
+```
+
+```
+There were `r '\x60r nrow(cars)\x60'` cars studied
+```
+There were `r nrow(cars)` cars studied
+
+```
+[linked phrase](http://example.com)
+```
+
+[linked phrase](http://example.com)
+
+
+```
+> It's always better to give
+> than to receive.
+```
+
+> It's always better to give
+> than to receive.
+
+```
+$A_2$
+```
+$A_2$
+
+```
+$$A_2$$
+```
+$$A_2$$
+
+```
+******
+```
+******
+
+```
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+Reference Style Links and Images
+```
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+```superscript^2```
+superscript^2^
+
+```~~strikethrough~~```
+~~strikethrough~~
