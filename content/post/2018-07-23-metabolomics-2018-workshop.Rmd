@@ -47,7 +47,7 @@ summary(dbpres)
 ```
 
 
-```{r eval=TRUE, echo=FALSE}
+```{r eval=TRUE, echo=TRUE, results="hide"}
 # SUR allow each trait to have its unique linear model
 require(systemfit,warn.conflicts=F,quietly=T)
 ```
@@ -66,7 +66,7 @@ coefficients(summary(sres))
 ```
 
 
-```{r eval=TRUE, echo=TRUE}
+```{r eval=FALSE, echo=TRUE}
 # POCRE helps to screen important variables before fitting a model
 library(POCRE)
 data(simdata)
