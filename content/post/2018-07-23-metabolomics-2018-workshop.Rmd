@@ -26,8 +26,11 @@ summary(nspca)
 summary(scpca)
 ```
 
-```{r eval=TRUE, echo=TRUE}
+```{r eval=TRUE, echo=FALSE}
 require(pls,warn.conflicts=F,quietly=T)
+```
+
+```{r eval=TRUE, echo=TRUE}
 idiag <- as.integer(mbd$Diagnosis) # 1~Healthy, 2~Polyps
 # PCR ignore correlation between principle components and response variable
 lmpcr <- pcr(idiag~as.matrix(mbd[,7:30]), ncomp = 5, scale=T)
@@ -44,10 +47,11 @@ summary(dbpres)
 ```
 
 
-```{r eval=TRUE, echo=TRUE}
+```{r eval=TRUE, echo=FALSE}
 # SUR allow each trait to have its unique linear model
 require(systemfit,warn.conflicts=F,quietly=T)
-
+```
+```{r eval=TRUE, echo=TRUE}
 mbd$idiag <- as.integer(mbd$Diagnosis)
 mbd$igender <- as.integer(mbd$Gender)
 mbd$ismoke <- as.integer(mbd$Smoking)
@@ -88,9 +92,5 @@ rbind(psXIdx[1:10],psXIdx[11:20])
 tres <- pocre(yy,xx)$retRes # inTP=1 by default
 ppres <- pocrepath(yy,xx,delta=0.01) # Scan tuning parameter
 optres <- selectmodel(inRes=ppres)
-
-plotbetanzbeta(ppres)
-plotbetarsq(ppres)
-plotrsqnzbeta(ppres)
 
 ```
