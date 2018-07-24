@@ -12,56 +12,49 @@ tags: []
 <p>This tutorial is based on workshop by Min Zhang and Dabao Zhang <a href="http://www.stat.purdue.edu/~zhangdb/packages/POCRE/" class="uri">http://www.stat.purdue.edu/~zhangdb/packages/POCRE/</a></p>
 <p>knitr::opts_chunk$get(‘fig.path’)</p>
 <pre class="r"><code>mbd &lt;- read.table(&quot;metabdata.csv&quot;,header=T,sep=&quot;,&quot;)
-summary(mbd)</code></pre>
-<pre><code>##    Diagnosis       Age        Gender      BMI        Smoking  Alcohol 
-##  Healthy:58   Min.   :48.00   F:49   Min.   :18.30   No :55   No :30  
-##  Polyps :44   1st Qu.:56.00   M:53   1st Qu.:24.25   Yes:47   Yes:72  
-##               Median :61.00          Median :27.04                    
-##               Mean   :60.85          Mean   :28.40                    
-##               3rd Qu.:66.00          3rd Qu.:32.35                    
-##               Max.   :72.00          Max.   :47.93                    
-##     Formate         Histidine       Phenylalanine       Tyrosine     
-##  Min.   : 1.017   Min.   :  5.985   Min.   : 41.08   Min.   : 12.80  
-##  1st Qu.: 4.867   1st Qu.: 84.514   1st Qu.: 84.60   1st Qu.: 49.53  
-##  Median : 7.489   Median :105.250   Median :100.92   Median : 58.59  
-##  Mean   : 8.279   Mean   :101.397   Mean   :110.94   Mean   : 59.07  
-##  3rd Qu.:10.797   3rd Qu.:121.240   3rd Qu.:123.93   3rd Qu.: 68.52  
-##  Max.   :21.445   Max.   :162.402   Max.   :271.76   Max.   :117.47  
-##       Urea         Unsaturate.Lipids    Glucose         Threonine     
-##  Min.   : -1.551   Min.   : 897.5    Min.   : 678.7   Min.   : 383.1  
-##  1st Qu.:118.635   1st Qu.:1739.5    1st Qu.:1449.2   1st Qu.: 511.8  
-##  Median :166.059   Median :2189.4    Median :1705.5   Median : 550.8  
-##  Mean   :175.758   Mean   :2266.4    Mean   :1655.8   Mean   : 560.8  
-##  3rd Qu.:214.147   3rd Qu.:2744.6    3rd Qu.:1861.8   3rd Qu.: 597.5  
-##  Max.   :522.694   Max.   :4126.6    Max.   :2345.0   Max.   :1282.7  
-##     Lactate         Creatinine        Glycine      Choline.Phosphocholine
-##  Min.   : 354.6   Min.   : 75.11   Min.   :142.9   Min.   :1179          
-##  1st Qu.: 474.3   1st Qu.:106.67   1st Qu.:254.5   1st Qu.:2121          
-##  Median : 552.3   Median :117.29   Median :300.9   Median :2748          
-##  Mean   : 568.6   Mean   :126.03   Mean   :304.4   Mean   :2689          
-##  3rd Qu.: 647.2   3rd Qu.:138.87   3rd Qu.:357.9   3rd Qu.:3246          
-##  Max.   :1018.4   Max.   :387.14   Max.   :497.1   Max.   :4317          
-##      Lysine      Dimethylglycine   Citric.acid       Glutamine     
-##  Min.   :236.2   Min.   : 28.68   Min.   : 96.66   Min.   : 406.3  
-##  1st Qu.:409.0   1st Qu.: 51.49   1st Qu.:195.34   1st Qu.: 771.8  
-##  Median :482.2   Median : 61.48   Median :237.22   Median :1042.6  
-##  Mean   :475.1   Mean   : 60.75   Mean   :245.32   Mean   : 993.6  
-##  3rd Qu.:547.5   3rd Qu.: 70.32   3rd Qu.:286.97   3rd Qu.:1200.6  
-##  Max.   :648.0   Max.   :107.72   Max.   :497.25   Max.   :1799.2  
-##  Glutamic.acid     Acetoacetate      Acetone        Acetic.acid    
-##  Min.   : 250.4   Min.   :119.5   Min.   : 144.3   Min.   : 88.16  
-##  1st Qu.: 357.0   1st Qu.:152.8   1st Qu.: 295.7   1st Qu.:124.85  
-##  Median : 409.6   Median :182.9   Median : 367.5   Median :142.46  
-##  Mean   : 423.0   Mean   :206.7   Mean   : 406.0   Mean   :141.77  
-##  3rd Qu.: 465.3   3rd Qu.:233.6   3rd Qu.: 485.1   3rd Qu.:158.41  
-##  Max.   :1194.0   Max.   :750.4   Max.   :1487.7   Max.   :210.68  
-##     Alanine       X3.hydroxybutyric.acid     Valine        Isoleucine    
-##  Min.   : 824.7   Min.   : 366.1         Min.   :324.4   Min.   : 86.74  
-##  1st Qu.:1206.8   1st Qu.: 556.6         1st Qu.:449.6   1st Qu.:109.36  
-##  Median :1371.0   Median : 711.5         Median :506.1   Median :118.72  
-##  Mean   :1359.4   Mean   : 769.7         Mean   :519.8   Mean   :124.04  
-##  3rd Qu.:1528.0   3rd Qu.: 856.9         3rd Qu.:578.9   3rd Qu.:137.18  
-##  Max.   :1887.7   Max.   :2965.0         Max.   :857.2   Max.   :205.89</code></pre>
+head(mbd)</code></pre>
+<pre><code>##   Diagnosis Age Gender   BMI Smoking Alcohol   Formate Histidine
+## 1    Polyps  48      M 22.00     Yes      No 10.284198  81.25795
+## 2    Polyps  50      M 32.80      No      No  2.190488 103.05184
+## 3    Polyps  53      F 23.34      No     Yes 12.954623 116.95868
+## 4    Polyps  53      F 22.30      No      No  4.533463 130.20090
+## 5    Polyps  55      M 24.50      No     Yes  8.096929 111.95904
+## 6    Polyps  55      M 33.00      No      No 12.643753 126.33281
+##   Phenylalanine Tyrosine     Urea Unsaturate.Lipids  Glucose Threonine
+## 1     111.82057 45.32021 191.5806         3080.7249 1325.424  518.3257
+## 2      70.78241 54.61597 158.7471         2192.0944 1704.053  607.3693
+## 3     163.78317 76.53537 439.7202          897.4816 1671.825  736.6308
+## 4      79.01733 71.10152 180.9137         1875.8008 2026.435  501.9727
+## 5      84.10746 62.95125 139.3122         2728.4029 1472.222  519.5280
+## 6     115.73892 83.09715 129.1230         1888.7315 1707.031  612.6526
+##    Lactate Creatinine  Glycine Choline.Phosphocholine   Lysine
+## 1 418.0202  110.79484 292.4338               2433.559 374.0597
+## 2 484.4745  149.00986 323.3713               2144.385 482.3460
+## 3 931.0390  124.05885 471.2856               3174.940 611.6825
+## 4 503.2655   95.84867 264.4822               3497.352 535.6388
+## 5 575.0472  153.00957 314.2641               2839.626 465.1237
+## 6 624.3059  155.83042 316.4153               3030.071 640.0113
+##   Dimethylglycine Citric.acid Glutamine Glutamic.acid Acetoacetate
+## 1        42.24443    123.4214  634.7745      326.1336     145.7854
+## 2        75.73314    257.9447 1121.1010      413.1681     171.1169
+## 3        73.63420    497.2508 1412.2490      585.6655     750.3555
+## 4        60.47198    256.6172 1200.9581      389.8260     216.4923
+## 5        65.03387    199.5429 1063.3462      403.2163     143.0917
+## 6        88.10509    267.0590 1211.0202      501.5705     217.2506
+##     Acetone Acetic.acid   Alanine X3.hydroxybutyric.acid   Valine
+## 1  482.1625    124.3118  923.0275               740.3038 460.9621
+## 2  295.4363    142.1678 1557.6425               481.9264 606.9665
+## 3 1487.6887    210.6812 1485.7262              2965.0379 857.1573
+## 4  468.2177    134.4554 1224.6017               917.6038 549.1478
+## 5  385.7700    142.1869 1303.4498               677.2214 624.1898
+## 6  708.4203    204.1675 1494.2345               886.1662 688.2485
+##   Isoleucine
+## 1   110.2875
+## 2   133.7548
+## 3   205.8861
+## 4   119.8784
+## 5   129.7284
+## 6   141.0204</code></pre>
 <pre class="r"><code>plot(nspca &lt;- prcomp(mbd[,7:30], scale. = F))</code></pre>
 <p><img src="/post/2018-07-23-metabolomics-2018-workshop_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>plot(scpca &lt;- prcomp(mbd[,7:30], scale. = T))</code></pre>
