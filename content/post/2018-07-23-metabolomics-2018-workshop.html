@@ -9,6 +9,7 @@ tags: []
 
 
 
+<p>This tutorial is based on workshop by Min Zhang and Dabao Zhang <a href="http://www.stat.purdue.edu/~zhangdb/packages/POCRE/" class="uri">http://www.stat.purdue.edu/~zhangdb/packages/POCRE/</a></p>
 <pre class="r"><code>mbd &lt;- read.table(&quot;metabdata.csv&quot;,header=T,sep=&quot;,&quot;)
 summary(mbd)</code></pre>
 <pre><code>##    Diagnosis       Age        Gender      BMI        Smoking  Alcohol 
@@ -60,7 +61,8 @@ summary(mbd)</code></pre>
 ##  Mean   :1359.4   Mean   : 769.7         Mean   :519.8   Mean   :124.04  
 ##  3rd Qu.:1528.0   3rd Qu.: 856.9         3rd Qu.:578.9   3rd Qu.:137.18  
 ##  Max.   :1887.7   Max.   :2965.0         Max.   :857.2   Max.   :205.89</code></pre>
-<pre class="r"><code>plot(nspca&lt;-prcomp(mbd[,7:30], scale. = F))</code></pre>
+<pre class="r"><code>library()
+plot(nspca&lt;-prcomp(mbd[,7:30], scale. = F))</code></pre>
 <p><img src="/post/2018-07-23-metabolomics-2018-workshop_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>plot(scpca&lt;-prcomp(mbd[,7:30], scale. = T))</code></pre>
 <p><img src="/post/2018-07-23-metabolomics-2018-workshop_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
