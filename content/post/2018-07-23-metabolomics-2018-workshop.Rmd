@@ -29,6 +29,68 @@ summary(scpca)
 ```{r eval=TRUE, echo=TRUE}
 require(pls,warn.conflicts=F,quietly=T)
 idiag <- as.integer(mbd$Diagnosis) # 1~Healthy, 2~Polyps
-lmpcr <- pcr(idiag~as.matrix(mbd[,7:30]), ncomp = 5)
+# PCR ignore correlation between principle components and response variable
+lmpcr <- pcr(idiag~as.matrix(mbd[,7:30]), ncomp = 5, scale=T)
 summary(lmpcr)
+# PLS find principle components that are most correlated to response variable
+plsres <- plsr(idiag~as.matrix(mbd[,7:30]), ncomp = 5, scale=T)
+summary(plsres)
+```
+
+```{r eval=TRUE, echo=TRUE}
+# PCR allow response to be multiple variables
+dbpres <- pcr(as.matrix(mbd[,c(2, 12)])~as.matrix(mbd[,7:11]) + as.matrix(mbd[,13:30]),5)
+summary(dbpres)
+```
+
+
+```{r eval=TRUE, echo=TRUE}
+# SUR allow each trait to have its unique linear model
+require(systemfit,warn.conflicts=F,quietly=T)
+
+mbd$idiag <- as.integer(mbd$Diagnosis)
+mbd$igender <- as.integer(mbd$Gender)
+mbd$ismoke <- as.integer(mbd$Smoking)
+mbd$ialco <- as.integer(mbd$Alcohol)
+eqAcetoac <- Acetoacetate~Age+BMI+idiag+igender+ismoke+ialco
+eqX3 <- X3.hydroxybutyric.acid~Age+BMI+idiag+igender+ismoke+ialco
+system <- list(Acetoac=eqAcetoac,X3=eqX3)
+sres <- systemfit(system, method="SUR",data=mbd)
+summary(sres)
+coefficients(summary(sres))
+
+```
+
+
+```{r eval=TRUE, echo=TRUE}
+# POCRE helps to screen important variables before fitting a model
+library(POCRE)
+data(simdata)
+yy <- simdata[1:50,1]
+xx <- as.matrix(simdata[1:50,2:1001])
+xxs <- as.matrix(xx[,1:200])
+axpls <- plsr(yy~xx,5) # Using all x
+sxpls <- plsr(yy~xxs,5) # Using selected x
+xxn <- simdata[51:100,2:1001] # new x
+xxsn <- as.matrix(xxn[,1:200]) # new x
+ya <- predict(axpls,xxn)
+ys <- predict(sxpls,xxsn)
+sum((simdata[51:100,1]-ya[,,5])^2) #prediction error when using
+sum((simdata[51:100,1]-ys[,,5])^2) #prediction error when using
+
+xx <- scale(as.matrix(simdata[,-1]))
+yy <- scale(as.matrix(simdata[,1]))
+psres <- pocrescreen(yy,xx,maxvar=50,maxcmp=10)
+psX <- psres$retX
+psXIdx <- psres$retSIdx
+rbind(psXIdx[1:10],psXIdx[11:20])
+
+tres <- pocre(yy,xx)$retRes # inTP=1 by default
+ppres <- pocrepath(yy,xx,delta=0.01) # Scan tuning parameter
+optres <- selectmodel(inRes=ppres)
+
+plotbetanzbeta(ppres)
+plotbetarsq(ppres)
+plotrsqnzbeta(ppres)
+
 ```
