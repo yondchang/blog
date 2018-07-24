@@ -106,3 +106,16 @@ summary(mbd)</code></pre>
 ## Standard deviation     0.30514 0.29954 0.27911 0.20862 0.2019 0.10699
 ## Proportion of Variance 0.00388 0.00374 0.00325 0.00181 0.0017 0.00048
 ## Cumulative Proportion  0.98903 0.99277 0.99601 0.99782 0.9995 1.00000</code></pre>
+<pre class="r"><code>require(pls,warn.conflicts=F,quietly=T)</code></pre>
+<pre><code>## Warning: package &#39;pls&#39; was built under R version 3.4.4</code></pre>
+<pre class="r"><code>idiag &lt;- as.integer(mbd$Diagnosis) # 1~Healthy, 2~Polyps
+lmpcr &lt;- pcr(idiag~as.matrix(mbd[,7:30]), ncomp = 5)
+summary(lmpcr)</code></pre>
+<pre><code>## Data:    X dimension: 102 24 
+##  Y dimension: 102 1
+## Fit method: svdpc
+## Number of components considered: 5
+## TRAINING: % variance explained
+##        1 comps  2 comps  3 comps  4 comps  5 comps
+## X       69.927   82.850   91.884   94.922   96.351
+## idiag    1.931    1.942    2.125    2.216    2.753</code></pre>

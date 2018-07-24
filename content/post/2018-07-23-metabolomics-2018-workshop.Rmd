@@ -25,3 +25,10 @@ plot(scpca <- prcomp(mbd[,7:30], scale. = T))
 summary(nspca)
 summary(scpca)
 ```
+
+```{r eval=TRUE, echo=TRUE}
+require(pls,warn.conflicts=F,quietly=T)
+idiag <- as.integer(mbd$Diagnosis) # 1~Healthy, 2~Polyps
+lmpcr <- pcr(idiag~as.matrix(mbd[,7:30]), ncomp = 5)
+summary(lmpcr)
+```
