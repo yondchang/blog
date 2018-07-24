@@ -10,8 +10,6 @@ tags: []
 This tutorial is based on workshop by Min Zhang and Dabao Zhang
 http://www.stat.purdue.edu/~zhangdb/packages/POCRE/
 
-knitr::opts_chunk$get('fig.path')
-
 ```{r eval=TRUE, echo=TRUE}
 mbd <- read.table("metabdata.csv",header=T,sep=",")
 head(mbd)
