@@ -10,6 +10,7 @@ tags: []
 This tutorial is based on workshop by Min Zhang and Dabao Zhang
 http://www.stat.purdue.edu/~zhangdb/packages/POCRE/
 
+knitr::opts_chunk$get('fig.path')
 
 ```{r eval=TRUE, echo=TRUE}
 mbd <- read.table("metabdata.csv",header=T,sep=",")
@@ -17,6 +18,10 @@ summary(mbd)
 ```
 
 ```{r eval=TRUE, echo=TRUE}
-plot(prcomp(mbd[,7:30], scale. = F))
-plot(prcomp(mbd[,7:30], scale. = T))
+plot(nspca <- prcomp(mbd[,7:30], scale. = F))
+plot(scpca <- prcomp(mbd[,7:30], scale. = T))
+```
+```{r eval=TRUE, echo=TRUE}
+summary(nspca)
+summary(scpca)
 ```
