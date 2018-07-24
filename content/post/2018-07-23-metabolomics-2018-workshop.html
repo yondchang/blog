@@ -9,4 +9,58 @@ tags: []
 
 
 
-
+<pre class="r"><code>mbd &lt;- read.table(&quot;metabdata.csv&quot;,header=T,sep=&quot;,&quot;)
+summary(mbd)</code></pre>
+<pre><code>##    Diagnosis       Age        Gender      BMI        Smoking  Alcohol 
+##  Healthy:58   Min.   :48.00   F:49   Min.   :18.30   No :55   No :30  
+##  Polyps :44   1st Qu.:56.00   M:53   1st Qu.:24.25   Yes:47   Yes:72  
+##               Median :61.00          Median :27.04                    
+##               Mean   :60.85          Mean   :28.40                    
+##               3rd Qu.:66.00          3rd Qu.:32.35                    
+##               Max.   :72.00          Max.   :47.93                    
+##     Formate         Histidine       Phenylalanine       Tyrosine     
+##  Min.   : 1.017   Min.   :  5.985   Min.   : 41.08   Min.   : 12.80  
+##  1st Qu.: 4.867   1st Qu.: 84.514   1st Qu.: 84.60   1st Qu.: 49.53  
+##  Median : 7.489   Median :105.250   Median :100.92   Median : 58.59  
+##  Mean   : 8.279   Mean   :101.397   Mean   :110.94   Mean   : 59.07  
+##  3rd Qu.:10.797   3rd Qu.:121.240   3rd Qu.:123.93   3rd Qu.: 68.52  
+##  Max.   :21.445   Max.   :162.402   Max.   :271.76   Max.   :117.47  
+##       Urea         Unsaturate.Lipids    Glucose         Threonine     
+##  Min.   : -1.551   Min.   : 897.5    Min.   : 678.7   Min.   : 383.1  
+##  1st Qu.:118.635   1st Qu.:1739.5    1st Qu.:1449.2   1st Qu.: 511.8  
+##  Median :166.059   Median :2189.4    Median :1705.5   Median : 550.8  
+##  Mean   :175.758   Mean   :2266.4    Mean   :1655.8   Mean   : 560.8  
+##  3rd Qu.:214.147   3rd Qu.:2744.6    3rd Qu.:1861.8   3rd Qu.: 597.5  
+##  Max.   :522.694   Max.   :4126.6    Max.   :2345.0   Max.   :1282.7  
+##     Lactate         Creatinine        Glycine      Choline.Phosphocholine
+##  Min.   : 354.6   Min.   : 75.11   Min.   :142.9   Min.   :1179          
+##  1st Qu.: 474.3   1st Qu.:106.67   1st Qu.:254.5   1st Qu.:2121          
+##  Median : 552.3   Median :117.29   Median :300.9   Median :2748          
+##  Mean   : 568.6   Mean   :126.03   Mean   :304.4   Mean   :2689          
+##  3rd Qu.: 647.2   3rd Qu.:138.87   3rd Qu.:357.9   3rd Qu.:3246          
+##  Max.   :1018.4   Max.   :387.14   Max.   :497.1   Max.   :4317          
+##      Lysine      Dimethylglycine   Citric.acid       Glutamine     
+##  Min.   :236.2   Min.   : 28.68   Min.   : 96.66   Min.   : 406.3  
+##  1st Qu.:409.0   1st Qu.: 51.49   1st Qu.:195.34   1st Qu.: 771.8  
+##  Median :482.2   Median : 61.48   Median :237.22   Median :1042.6  
+##  Mean   :475.1   Mean   : 60.75   Mean   :245.32   Mean   : 993.6  
+##  3rd Qu.:547.5   3rd Qu.: 70.32   3rd Qu.:286.97   3rd Qu.:1200.6  
+##  Max.   :648.0   Max.   :107.72   Max.   :497.25   Max.   :1799.2  
+##  Glutamic.acid     Acetoacetate      Acetone        Acetic.acid    
+##  Min.   : 250.4   Min.   :119.5   Min.   : 144.3   Min.   : 88.16  
+##  1st Qu.: 357.0   1st Qu.:152.8   1st Qu.: 295.7   1st Qu.:124.85  
+##  Median : 409.6   Median :182.9   Median : 367.5   Median :142.46  
+##  Mean   : 423.0   Mean   :206.7   Mean   : 406.0   Mean   :141.77  
+##  3rd Qu.: 465.3   3rd Qu.:233.6   3rd Qu.: 485.1   3rd Qu.:158.41  
+##  Max.   :1194.0   Max.   :750.4   Max.   :1487.7   Max.   :210.68  
+##     Alanine       X3.hydroxybutyric.acid     Valine        Isoleucine    
+##  Min.   : 824.7   Min.   : 366.1         Min.   :324.4   Min.   : 86.74  
+##  1st Qu.:1206.8   1st Qu.: 556.6         1st Qu.:449.6   1st Qu.:109.36  
+##  Median :1371.0   Median : 711.5         Median :506.1   Median :118.72  
+##  Mean   :1359.4   Mean   : 769.7         Mean   :519.8   Mean   :124.04  
+##  3rd Qu.:1528.0   3rd Qu.: 856.9         3rd Qu.:578.9   3rd Qu.:137.18  
+##  Max.   :1887.7   Max.   :2965.0         Max.   :857.2   Max.   :205.89</code></pre>
+<pre class="r"><code>plot(nspca&lt;-prcomp(mbd[,7:30], scale. = F))</code></pre>
+<p><img src="/post/2018-07-23-metabolomics-2018-workshop_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<pre class="r"><code>plot(scpca&lt;-prcomp(mbd[,7:30], scale. = T))</code></pre>
+<p><img src="/post/2018-07-23-metabolomics-2018-workshop_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
