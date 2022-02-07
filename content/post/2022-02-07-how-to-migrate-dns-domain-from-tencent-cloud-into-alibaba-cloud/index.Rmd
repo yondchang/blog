@@ -1,15 +1,15 @@
 ---
-title: "How to migrate DNS domain from Tencent cloud into Alibaba cloud"
+title: "How to migrate DNS domain from one registrar into another"
 author: "Yang Zhang"
 date: '2022-02-07'
-slug: how-to-migrate-dns-domain-from-tencent-cloud-into-alibaba-cloud
+slug: how-to-migrate-dns-domain-from-one-registrar-into-another
 categories: []
 tags: []
 subtitle: ''
 ---
 
 # Background
-DNS registrar does not simply sell customer domain names, different registrars offer different features and pricing, choosing a good reliable DNS registrar to host your precious company domain name is always a good idea. There are times when one needs to switch DNS registrar, e.g. change ownership of domain name, found a registrar with better pricing or better security. In this post I will go through the steps I took to transfer DNS domain name from Tencent cloud into Alibaba cloud.
+DNS registrar does not simply sell customer domain names, different registrars offer different features and pricing, e.g. Godaddy, Alibaba, Google etc, choosing a good reliable DNS registrar to host your precious company domain name is always a good idea. There are times when one needs to switch DNS registrar, e.g. change ownership of domain name, found a registrar with better pricing or better security. In this post I will go through the steps I took to transfer DNS domain name from Tencent cloud into Alibaba cloud.
 
 ## Step 1
 
@@ -23,5 +23,5 @@ Type domain name and transfer key in destination DNS registrar (Alibaba cloud in
 ![](DNS_transfer.png)
 
 ## Step 3
-Due to government regulations, all corporate domain names needs to go through background check before either initial registration or transfer. In this case one needs to register a information template (信息模板) before domain transfer.
+Due to government regulations, all corporate domain names needs to go through background check before either initial registration or transfer. In our case one needs to register a information template (信息模板) before domain transfer.
 This check will normally take 1 to 3 business days.
