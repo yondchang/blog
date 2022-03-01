@@ -1,0 +1,29 @@
+---
+title: "A running list of useful Bioinformatics definitions"
+author: "Yang Zhang"
+date: '2022-02-28'
+output: html_document
+categories: []
+tags: []
+subtitle: ''
+slug: a-running-list-of-useful-bioinformatics-definitions
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+Here is a list of useful definitions for Bioinformatics, it mainly
+serves as a reference for myself but hopefully it will be useful for
+other folks as well.
+
+-   Pearson vs Kendall vs Spearman 
+    (@) Pearson 
+        $r=\frac{\sum(X-\bar{X})(Y-\bar{Y})}{\sqrt{\sum(X-\bar{X})^2\sum(Y-\bar{Y})^2}}$
+    (@) Kendall
+        $\tau=\frac{n_c-n_d}{n_c+n_d}=\frac{n_c-n_d}{n(n-1)/2}$
+        where $n_c$ is number of concordant pairs and $n_d$ is number of discordant pairs
+    (@) Spearman
+        $\rho=\frac{\sum_{i=1}^{n}(R(x_i)-\bar{R(x)})(R(y_i)-\bar{R(y)})}{\sqrt{\sum_{i=1}^{n}(R(x_i)-\bar{R(x)})^2\sum_{i=1}^{n}(R(y_i)-\bar{R(y)})^2}}$
+        where $R(x_i)$ is rank of $x_i$ and $R(y_i)$ is rank of $y_i$
+        
+        
