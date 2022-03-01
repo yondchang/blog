@@ -2,14 +2,10 @@
 title: "A running list of useful Bioinformatics definitions"
 author: "Yang Zhang"
 date: '2022-02-28'
-output: html_document
 categories: []
 tags: []
 subtitle: ''
 slug: a-running-list-of-useful-bioinformatics-definitions
-editor_options: 
-  markdown: 
-    wrap: 72
 ---
 
 Here is a list of useful definitions for Bioinformatics, it mainly
