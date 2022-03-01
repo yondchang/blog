@@ -2,17 +2,15 @@
 title: "A running list of useful Bioinformatics definitions"
 author: "Yang Zhang"
 date: '2022-02-28'
-output: html_document
 categories: []
 tags: []
 subtitle: ''
 slug: a-running-list-of-useful-bioinformatics-definitions
-editor_options: 
-  markdown: 
-    wrap: 72
 ---
 
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
 <p>Here is a list of useful definitions for Bioinformatics, it mainly
@@ -20,7 +18,7 @@ serves as a reference for myself but hopefully it will be useful for
 other folks as well.</p>
 <ul>
 <li>Pearson vs Kendall vs Spearman
-<ol class="example" style="list-style-type: decimal">
+<ul>
 <li>Pearson
 <span class="math inline">\(r=\frac{\sum(X-\bar{X})(Y-\bar{Y})}{\sqrt{\sum(X-\bar{X})^2\sum(Y-\bar{Y})^2}}\)</span></li>
 <li>Kendall
@@ -29,5 +27,5 @@ where <span class="math inline">\(n_c\)</span> is number of concordant pairs and
 <li>Spearman
 <span class="math inline">\(\rho=\frac{\sum_{i=1}^{n}(R(x_i)-\bar{R(x)})(R(y_i)-\bar{R(y)})}{\sqrt{\sum_{i=1}^{n}(R(x_i)-\bar{R(x)})^2\sum_{i=1}^{n}(R(y_i)-\bar{R(y)})^2}}\)</span>
 where <span class="math inline">\(R(x_i)\)</span> is rank of <span class="math inline">\(x_i\)</span> and <span class="math inline">\(R(y_i)\)</span> is rank of <span class="math inline">\(y_i\)</span></li>
-</ol></li>
+</ul></li>
 </ul>
