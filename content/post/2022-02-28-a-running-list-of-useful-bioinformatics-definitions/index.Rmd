@@ -22,7 +22,8 @@ other folks as well.
         $\rho=\frac{\sum_{i=1}^{n}(R(x_i)-\bar{R(x)})(R(y_i)-\bar{R(y)})}{\sqrt{\sum_{i=1}^{n}(R(x_i)-\bar{R(x)})^2\sum_{i=1}^{n}(R(y_i)-\bar{R(y)})^2}}$
         where $R(x_i)$ is rank of $x_i$ and $R(y_i)$ is rank of $y_i$
 
-- PCA vs OPLS-DA
-  + PCA is unsupervised and works well when inter-group difference is big and intra-group has relatively small difference.
+- PCA vs PCOA vs OPLS-DA 
+  + PCA is based on Euclidean distance, it is unsupervised and works well when inter-group difference is big and intra-group has relatively small difference.
+  + PCOA is similar to PCA but based on non-Euclidean distance.
   + PLS is supervised, O stands for orthogonal and works well when sample size is small relative to feature numbers.
         
