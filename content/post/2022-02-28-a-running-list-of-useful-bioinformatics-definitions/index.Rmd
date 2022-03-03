@@ -26,4 +26,8 @@ other folks as well.
   + PCA is based on Euclidean distance, it is unsupervised and works well when inter-group difference is big and intra-group has relatively small difference.
   + PCOA is similar to PCA but based on non-Euclidean distance.
   + PLS is supervised, O stands for orthogonal and works well when sample size is small relative to feature numbers.
+  
+- ANOVA: Analysis of Variance
+
+- ANOSIM: ANalysis Of Similarities
         
