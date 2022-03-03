@@ -32,3 +32,5 @@ other folks as well.
 - ANOSIM: ANalysis Of Similarities
 
 - Prokka: rapid prokaryotic genome annotation
+
+- ANI/AAI: Average Nucleotide Identity/Average Amino-acid Identity
