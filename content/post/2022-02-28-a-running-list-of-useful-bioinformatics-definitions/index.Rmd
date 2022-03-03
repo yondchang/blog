@@ -30,4 +30,5 @@ other folks as well.
 - ANOVA: Analysis of Variance
 
 - ANOSIM: ANalysis Of Similarities
-        
+
+- Prokka: rapid prokaryotic genome annotation
