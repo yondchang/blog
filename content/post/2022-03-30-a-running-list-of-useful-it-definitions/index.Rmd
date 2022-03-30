@@ -1,0 +1,14 @@
+---
+title: A running list of useful IT definitions
+author: 'Yang Zhang'
+date: '2022-03-30'
+slug: a-running-list-of-useful-it-definitions
+categories: []
+tags: []
+subtitle: ''
+---
+
+- HA: High Availability
+- DR: Data Recovery
+- RTO: Recovery Time Objective, i.e. time taken from start of recovery to completion, ideally 0 or instant recovery.
+- RPO: Recovery Point Objective, i.e. until which day the data is recovered, ideally 0 or immediate recovered to latest data
