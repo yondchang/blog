@@ -15,7 +15,7 @@ Step 2:
 ```
 install Docker following instruction here https://docs.docker.com/engine/install/ubuntu/
 
-docker fetch wurmlab/sequenceserver
+docker pull wurmlab/sequenceserver
 
 makeblastdb -dbtype nucl -title Organism -in path_for_library/Organism.fasta -parse_seqids
 
