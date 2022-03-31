@@ -1,0 +1,23 @@
+---
+title: Set up local NCBI blast server on the cloud
+author: 'Yang Zhang'
+date: '2022-03-31'
+slug: set-up-local-ncbi-blast-server
+categories: []
+tags: []
+subtitle: ''
+---
+
+Step 1: Log on to your ECS in the cloud
+
+Step 2: 
+
+```
+install Docker following instruction here https://docs.docker.com/engine/install/ubuntu/
+
+docker fetch wurmlab/sequenceserver
+
+makeblastdb -dbtype nucl -title Organism -in path_for_library/Organism.fasta -parse_seqids
+
+docker run --rm -itp 4567:4567 -v path_for_library:/db wurmlab/sequenceserver
+```
